@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ParashaController;
+use App\Http\Controllers\NasaApiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +14,5 @@ use App\Http\Controllers\ParashaController;
 */
 Route::redirect('/', '/nasa');
 
-Route::get('/nasa',[ParashaController::class, 'index']) ->name('nasa');
-Route::post('/nasa', [ParashaController::class, 'show'])->name('nasa.post');
+Route::get('/nasa',[NasaApiController::class, 'index']) ->name('nasa');
+Route::post('/nasa', [NasaApiController::class, 'show'])->name('nasa.post');

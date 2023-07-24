@@ -7,7 +7,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class ParashaController extends BaseController
+class NasaApiController extends BaseController
 {
     public function index(){
         $response = Http::get('https://api.nasa.gov/planetary/apod?api_key=QALhtF6JaMpmZWKiyNoRMz4H9AOvT5Wqg6kEXO8w');
