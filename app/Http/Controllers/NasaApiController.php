@@ -15,7 +15,7 @@ class NasaApiController extends BaseController
         $url = $response->url;
         $date = $response->date;
         $text = $response->explanation;
-        return view('welcome', compact('url', 'date', 'text'));
+        return view('nasa', compact('url', 'date', 'text'));
     }
 
     public function show(Request $request){
@@ -31,6 +31,6 @@ class NasaApiController extends BaseController
         } catch (Exception $e) {
             return abort('404');
         }
-        return view('welcome', compact('url', 'date', 'text'));
+        return view('nasa', compact('url', 'date', 'text'));
     }
 }
