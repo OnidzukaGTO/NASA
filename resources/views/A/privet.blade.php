@@ -21,23 +21,53 @@
             <img src="img/police-car.gif" alt="Police Car">
         </div>
     </header>
-
-    <div class="snake-container">
-        <div class="snake"></div>
+    <div class="help">
+        <button id="activateButton">
+            <h1>
+                ПОМОЧЬ ШРЕКАМ!
+            </h1>
+        </button>
     </div>
-    <div class="snake-container">
-        <img class="Ryan" src="img/Ryan.jpg" alt="Ryan">
+    <div id="hiddenContent" class="Ryan" style="display: none;">
+        <img src="img/Billy.jpg" alt="Ryan" width="300px" height="168.85px">
+        <img src="img/Ryan.jpg" alt="Ryan" width="300px">
+        <img src="img/Ryan.jpg" alt="Ryan" width="300px">
     </div>
 
+    <div id="gif-container" class="hidden">
+        <img src="img/boom.gif" alt="Моя GIF-анимация">
+        <img src="img/boom.gif" alt="Моя GIF-анимация">
+        <img src="img/boom.gif" alt="Моя GIF-анимация">
+        <img src="img/boom.gif" alt="Моя GIF-анимация">
+    </div>
+    
 
 
+    
     <audio id="audio" loop src="sound/1.mp3"></audio>
     <script>
+
     var first = true;
-    document.onclick = function(){
-        if(first == true) audio.play()
-        first = false;
-    }
+
+    document.getElementById("activateButton").addEventListener("click", function() {
+    if(first == true) audio.play()
+    first = false;
+    var hiddenContent = document.getElementById("hiddenContent");
+    hiddenContent.style.display = "flex";
+ 
+    const animationContainer = document.querySelector('.Ryan');
+    const gifContainer = document.getElementById('gif-container');
+
+    animationContainer.addEventListener('animationend', () => {
+        // Отображаем GIF на весь экран
+        gifContainer.classList.remove('hidden');
+
+        // Закрываем GIF при щелчке на нем
+        gifContainer.addEventListener('click', () => {
+            gifContainer.classList.add('hidden');
+        });
+    });
+    });
     </script>
 </body>
 </html>
