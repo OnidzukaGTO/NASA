@@ -35,7 +35,7 @@ body {
     flex-direction: column;
     align-items: flex-end;
     position: absolute;
-    animation: snake 10s linear forwards;
+    animation: snake 12s  linear forwards;
 }
 .Ryan img{
     margin: 7px;
@@ -49,7 +49,16 @@ body {
 .hidden {
     display: none;
 }
-
+.gif{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Полупрозрачный фон для подложки */
+    display: flex;
+    z-index: 9999;
+}
 @keyframes moveLeft {
     0% {
         transform: translateX(100%);

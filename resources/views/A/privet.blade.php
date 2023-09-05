@@ -33,18 +33,18 @@
         <img src="img/Ryan.jpg" alt="Ryan" width="300px">
         <img src="img/Ryan.jpg" alt="Ryan" width="300px">
     </div>
-
-    <div id="gif-container" class="hidden">
-        <img src="img/boom.gif" alt="Моя GIF-анимация">
-        <img src="img/boom.gif" alt="Моя GIF-анимация">
-        <img src="img/boom.gif" alt="Моя GIF-анимация">
-        <img src="img/boom.gif" alt="Моя GIF-анимация">
-    </div>
+    
+    <a href="{{route('nasa')}}">
+        <div id="gif-container" class="hidden">
+            <img src="img/boom.gif" alt="Моя GIF-анимация">
+        </div>
+    </a>
     
 
-
+    
     
     <audio id="audio" loop src="sound/1.mp3"></audio>
+    
     <script>
 
     var first = true;
@@ -61,11 +61,7 @@
     animationContainer.addEventListener('animationend', () => {
         // Отображаем GIF на весь экран
         gifContainer.classList.remove('hidden');
-
-        // Закрываем GIF при щелчке на нем
-        gifContainer.addEventListener('click', () => {
-            gifContainer.classList.add('hidden');
-        });
+        gifContainer.classList.add('gif');
     });
     });
     </script>
